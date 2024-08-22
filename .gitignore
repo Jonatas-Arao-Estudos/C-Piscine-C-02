@@ -2,3 +2,4 @@
 .vscode
 main.c
 a.out
+Makefile
