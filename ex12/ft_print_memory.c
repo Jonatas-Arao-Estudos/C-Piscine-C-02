@@ -6,7 +6,7 @@
 /*   By: jarao-de <jarao-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:17:50 by jarao-de          #+#    #+#             */
-/*   Updated: 2024/08/27 17:07:48 by jarao-de         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:05:23 by jarao-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ void	ft_putnbr_hex(unsigned long nb, int digits, int unit)
 	}
 }
 
-void	ft_string_hex(char *str, int start, int print_size, int str_size)
+void	ft_string_hex(unsigned char *str, unsigned int start,
+						unsigned int print_size, unsigned int str_size)
 {
-	int	index;
+	unsigned int	index;
 
 	index = 0;
 	while (index < print_size && start + index < str_size)
@@ -61,9 +62,10 @@ void	ft_string_hex(char *str, int start, int print_size, int str_size)
 	}
 }
 
-void	ft_string(char *str, int start, int print_size, int str_size)
+void	ft_string(unsigned char *str, unsigned int start,
+					unsigned int print_size, unsigned int str_size)
 {
-	int	index;
+	unsigned int	index;
 
 	index = 0;
 	while (index < print_size && start + index < str_size)
@@ -79,7 +81,7 @@ void	ft_string(char *str, int start, int print_size, int str_size)
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	unsigned long	addr_num;
-	char			*addr_char;
+	unsigned char	*addr_char;
 	unsigned int	index;
 
 	if (size > 0)
