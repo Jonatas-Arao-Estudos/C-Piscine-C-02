@@ -6,7 +6,7 @@
 /*   By: jarao-de <jarao-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:17:50 by jarao-de          #+#    #+#             */
-/*   Updated: 2024/08/28 11:05:23 by jarao-de         ###   ########.fr       */
+/*   Updated: 2024/08/31 15:30:53 by jarao-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,17 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	unsigned long	addr_num;
 	unsigned char	*addr_char;
 	unsigned int	index;
+	unsigned int	pages;
 
 	if (size > 0)
 	{
 		addr_num = (unsigned long) addr;
 		addr_char = addr;
+		pages = size / 16;
+		if (size % 16 == 0)
+			pages = pages - 1;
 		index = 0;
-		while (index <= size / 16)
+		while (index <= pages)
 		{
 			ft_putnbr_hex(addr_num + index * 16, 16, 0);
 			write(1, ": ", 2);
